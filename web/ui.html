@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css"
+  />
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                animation: {
+                    'spin-slow': 'spin 10s linear infinite',
+                    'progress': 'progress 6s linear',
+                },
+                rotate: {
+                    '45-negative': '-45deg',
+                },
+                scale: {
+                '-100': '-1',
+                },
+                colors: {
+                    nts: '#36d2c5',
+                    normal: '#8a8a8a',
+                }
+                }
+            }
+        }
+    </script>
+    <title>NTS LIFESTYLE - by "shkssj#1010 and Jv$t#8895</title>
+</head>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+        @font-face {
+            font-family: "TT Lakes";
+            src: url("./fonts/ttlakes.eot"); /* IE9*/
+            src: url("./fonts/ttlakes.eot?#iefix") format("embedded-opentype"),
+                /* IE6-IE8 */ url("./fonts/ttlakes.woff2") format("woff2"),
+                /* chrome、firefox */ url("./fonts/ttlakes.woff") format("woff"),
+                /* chrome、firefox */ url("./fonts/ttlakes.ttf") format("truetype"),
+                /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+                url("./fonts/ttlakes.svg") format("svg"); /* iOS 4.1- */
+        }
+
+        body {
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .fade-enter-active,
+        .fade-leave-active {
+            animation: finished 0.5s;
+        }
+
+            input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            }
+
+
+            input[type="range"] {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                cursor: e-resize;
+            }
+
+            input[type="range"]::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                height: 2.4vh;
+                width: 0.1vw;
+                border-radius: 0.5vmin;
+                background: #ff0000;
+            }
+        .notify {
+            animation: show 0.7s;
+        }
+
+        .hide {
+            animation: hide_2 0.7s;
+        }
+
+        @keyframes castoms {
+            from {
+                width: 100%;
+            }
+            to {
+                width: 0%;
+            }
+        }
+
+        .progress {
+            animation: castoms 30s linear;
+        }
+
+        @keyframes show {
+            0% {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            100% 
+            {
+                opacity: 1;
+                transform: translateX(0%);
+            }
+        }
+
+        @keyframes hide_2 {
+            0% {
+                opacity: 1;
+                transform: translateX(0%);
+            }
+            100% 
+            {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+        }
+
+        .font_castoms {
+            font-family: "Chakra Petch", sans-serif;
+        }
+
+        .font_castoms_2 {
+            font-family: "TT Lakes";
+        }
+
+        .draggando {
+            opacity: 20%;
+        }
+
+        .gradient_green {
+            background: linear-gradient(
+            85.15deg,
+            rgba(12, 101, 37, 0.56) 2.25%,
+            rgba(12, 101, 37, 0.65) 33.22%,
+            rgba(0, 0, 0, 0.65) 104.78%
+          );
+        }
+
+        .gradient_red {
+            background: linear-gradient(
+                85.15deg,
+                rgba(191, 58, 58, 0.56) 2.25%,
+                rgba(191, 58, 58, 0.65) 33.22%,
+                rgba(0, 0, 0, 0.65) 104.78%
+            );
+        }
+
+        .gradient_red_2 {
+            background: linear-gradient(
+                85.15deg,
+                rgba(151, 44, 44, 0.56) 2.25%,
+                rgba(150, 38, 38, 0.56) 33.22%,
+                rgba(0, 0, 0, 0.65) 104.78%
+            );
+        }
+
+        .gradient_giallo {
+            background: linear-gradient(
+                85.15deg,
+                #36d2c5 2.25%,
+                rgba(231, 228, 64, 0.65) 33.22%,
+                rgba(0, 0, 0, 0.65) 104.78%
+            );
+        }
+        
+        @keyframes progress {
+            from {
+                width: 100%;
+            }
+            to {
+                width: 0%;
+            }
+        }
+
+        .shadow_dio {
+            filter: drop-shadow(0px 0px 10px #36d2c559);
+        }
+
+        .hud {
+            width: 100%;
+            transition: all 1s ease;
+            height: 10px;
+            background-image: linear-gradient(
+                to right,
+                rgb(0, 89, 255) 0%,
+                rgb(0, 89, 255) 90%,
+                transparent 50%
+            );
+            background-size: 40px 1px;
+        }
+
+        .immagine_gradient {
+         -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+         mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+        }
+
+        .hud2 {
+            background-image: linear-gradient(
+                to right,
+                rgb(187, 56, 56) 0%,
+                rgb(187, 56, 56) 90%,
+                transparent 50%
+            );
+            background-size: 40px 1px;
+        }
+
+        ::-webkit-scrollbar {
+        width: 0.15vw;
+        height: 1vh;
+        }
+        ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px rgb(0 0 0 / 15%); 
+        }
+        ::-webkit-scrollbar-thumb {
+        background: #373737; 
+        border-radius: 0.25vw;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+        background: #dfdfdf; 
+        }
+
+        .text_ui_pulse {
+            animation: pulse-red 2s infinite;
+        }
+
+        .text_ui_key {
+            background: rgba(17, 17, 17, 0.15);
+            border: 1px solid rgba(17, 17, 17, 0.05);
+            box-shadow: 0 0 0 0 rgb(17 17 17 / 5%);
+        }
+
+        @keyframes pulse-red {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgb(172, 18, 18);
+            }
+
+                70% {
+                    transform: scale(1);
+                    box-shadow: 0 0 0 10px rgba(142, 68, 173, 0);
+                }
+
+                100% {
+                    transform: scale(0.95);
+                    box-shadow: 0 0 0 0 rgba(142, 68, 173, 0);
+            }
+        }
+
+        @keyframes finished {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes finished2 {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+        @keyframes finished3 {
+            from {
+                opacity: 0;
+                transform: translateY(-10%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+
+        @keyframes finished4 {
+            from {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-10%);
+            }
+        }
+
+        .fade-enter-from,
+        .fade-leave-to {
+            animation: finished2 0.5s;
+        }
+
+        .fade_2-enter-active,
+        .fade_2-leave-active {
+            animation: finished3 0.8s;
+        }
+
+        .fade_2-enter-from,
+        .fade_2-leave-to {
+            animation: finished4 0.9s;
+        }
+    </style>
+    <body>
+        <div class="antialiased overflow-hidden w-screen h-screen font-[Inter]" id="wrapper">
+            <Transition name="fade">
+                <div class="absolute w-[100%] h-[100%] flex bg-zinc-900/[100%]" v-if="lifestyle.active">
+                    <div class="w-[100%] h-[100%] select-none flex justify-center items-center">
+                        <div class="flex flex-col relative">
+                            <div class="absolute flex gap-[1vw] ml-[0.3vw] mt-[-1vh] opacity-[5%]" style="transform: skew(-20deg);">
+                                <div class="h-[5vh] bg-nts w-[1vw]"></div>
+                                <div class="h-[5vh] bg-zinc-700 w-[1vw]"></div>
+                                <div class="h-[5vh] bg-nts w-[1vw]"></div>
+                                <div class="h-[5vh] bg-zinc-700 w-[1vw]"></div>
+                                <div class="h-[5vh] bg-nts w-[1vw]"></div>
+                            </div>
+                            <div class="flex flex-col z-[2]">
+                                <h1 class="font-[300] text-zinc-400 tracking-[0.2vw] text-[1.5vmin] uppercase">{{lifestyle.langs['selezione']}}</h1>
+                                <h1 class="font-[600] text-zinc-300 tracking-[0.1vw] text-[2.5vmin] uppercase">{{lifestyle.langs['lifestyle']}}</h1>
+                                <h1 class="font-[300] text-zinc-500 text-[1.3vmin] w-[20vw]">{{lifestyle.langs['lifebio']}}</h1>
+                            </div>
+                            <div class="flex flex-wrap max-w-[80vw] gap-[1vw] mt-[2vh] z-[2] overflow-y-auto max-h-[80vh]">
+                                <div v-for="(info, index) in lifestyle.categories" class="h-fit min-h-[37vh] px-[1vw] py-[1.5vh] overflow-hidden relative w-[15vw] flex flex-col bg-gradient-to-b from-zinc-700/[50%] rounded to-nts/[0%]">
+                                    <h1 class="font-[700] text-zinc-300 tracking-[0.1vw] uppercase text-[1.8vmin]">{{info.nome}}</h1>
+                                    <h1 class="font-[400] text-zinc-500 tracking-[0.1vw] text-[1.3vmin]">{{info.desc}}</h1>
+                                    <h1 class="font-[400] text-zinc-500 text-[1.4vmin] mt-[2vh] tracking-wide">ACCOUNTS</h1>
+                                    <h1 v-for="(item_2, key_2) in info.accounts" :key="key_2" class="font-[600] text-zinc-300 text-[1.2vmin] flex items-center gap-[0.3vw]"><span class="w-[0.5vh] h-[0.5vh] rounded-full bg-nts"></span> <b class="text-zinc-400 font-[800]">{{lifestyle.langs[key_2]}}:</b>{{item_2}}</h1>
+                                    <h1 class="font-[400] text-zinc-500 text-[1.4vmin] mt-[2vh] tracking-wide">ITEMS</h1>
+                                    <h1 v-for="(item, key) in info.items" class="font-[600] text-zinc-300 text-[1.2vmin] flex items-center gap-[0.3vw]"><span class="w-[0.5vh] h-[0.5vh] rounded-full bg-nts"></span> <b class="text-zinc-400">x{{item.quant}}</b> {{item.label}}</h1>
+                                    <div class="z-[2] absolute left-0 right-0 cursor-pointer hover:opacity-40 transition-all mx-auto mb-[2vh] bottom-0 w-[10vw] h-[3vh] rounded text-zinc-200 text-[1.25vmin] bg-nts/[80%] flex items-center justify-center shadow_dio active:bg-nts/[50%]" @click="seleziona(info.nome)">{{lifestyle.langs['button']}}</div>
+                                    <img class="w-[12vw] mb-[-4vh] h-[32vh] mr-[-4vw] opacity-[20%] immagine_gradient absolute right-0 bottom-0 transform -scale-x-100" :src="info.img">
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="absolute h-[98%] flex justify-center items-end w-[100%]">
+                            <div class="text-zinc-700 text-[1.1vmin] w-[15vw] text-center">{{lifestyle.langs['warning']}}</div>
+                        </div>
+                        <img src="https://images4.alphacoders.com/120/1201904.jpg" class="absolute w-[100%] h-[100%] opacity-[2%] saturate-0">
+                        <div class="absolute blur-[100px] opacity-20 bg-nts w-[20vw] right-0 h-[15vh] mr-[-5vw] mt-[-10vh]"></div>
+                        <div class="absolute blur-[100px] opacity-20 bg-slate-500 w-[10vw] right-0 h-[15vh] mr-[-5vw] mt-[5vh]"></div>
+                        <div class="absolute blur-[100px] opacity-10 bg-nts w-[13vw] h-[20vh] ml-[-3vw] mt-[-10vh]"></div>
+                        <div class="absolute blur-[100px] opacity-20 bg-nts w-[20vw] bottom-0 h-[15vh] mr-[-5vw] mb-[-10vh]"></div>
+                        <div class="absolute blur-[100px] opacity-20 bg-slate-500 w-[10vw] h-[15vh] ml-[-5vw] mt-[5vh]"></div>
+                    </div>
+            </Transition>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
