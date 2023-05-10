@@ -1,27 +1,14 @@
 
+# Framework
+This lifestyle choice system has been designed to be adaptable to any type of server & framework, for now the version in ESX Legacy is available, a version for QbCore will be implemented soon.
 
-```lua 
-    -- enable nui in client side
-    TriggerEvent('lifestyle.startnui')
-
-    -- get lifestyle in client side
-    LocalPlayer.state.lifestyle
-
-    -- on select client side
-    AddEventHandler('lifestyle.finished', function(lifestyle)
-    
-    end)
-
-    -- enable nui in server side
-    TriggerEvent('lifestyle.startnui', player_source)
-
-    -- get lifestyle in server side
-    Player(source).state.lifestyle
-    -- framework version
-    xPlayer.variables.lifestyle
-
-    -- on select server side
-    AddEventHandler('lifestyle.finished', function(lifestyle)
-    
-    end)
+# Config & SQL
+Refer to the documentation setting your [config](https://app.gitbook.com/o/VU48gAOQ4jpQWkaNwQgG/s/FntAdaW2turge3bhlAYX/). 
+```sql
+ALTER TABLE `users` ADD COLUMN `lifestyle` VARCHAR(50) NULL DEFAULT;
 ```
+
+# Features
+* ability to create as many characters as you want
+* ability to give money, items, vehicles and weapons
+* state bags integrations
